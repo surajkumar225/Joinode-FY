@@ -12,6 +12,14 @@ import { CompilertSliceStateType, updateCurrentLanguage } from "@/redux/slices/c
 import { RootState } from "@/redux/store";
 
 export default function HelperHeader() {
+
+  const handleSaveCode = async () => {
+    try{
+
+    }catch(error){
+
+    }
+  }
     const dispatch = useDispatch();
     const currentLanguage = useSelector((state:RootState)=>state.compilerSlice.currentLanguage)
   return (
