@@ -1,11 +1,13 @@
 import React from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { tags as t } from "@lezer/highlight";
-import { draculaInit } from "@uiw/codemirror-theme-dracula";
+// import { draculaInit } from "@uiw/codemirror-theme-dracula";
 import { loadLanguage } from "@uiw/codemirror-extensions-langs";
 import { RootState } from "@/redux/store";
 import { useDispatch, useSelector } from "react-redux";
 import { updateCodeValue } from "@/redux/slices/compilerSlice";
+// import { abcdefInit } from "@uiw/codemirror-theme-abcdef";
+import { vscodeDarkInit } from '@uiw/codemirror-theme-vscode';
 // import { updateCSS, updateJS } from "@/redux/slices/compilerSlice";
 
 export default function CodeEditor() {
@@ -33,7 +35,7 @@ export default function CodeEditor() {
       height="calc(100vh - 60px - 50px)"
       extensions={[loadLanguage(currentLanguage)!]}
       onChange={onChange}
-      theme={draculaInit({
+      theme={vscodeDarkInit({
         settings: {
           caret: "#c6c6c6",
           fontFamily: "monospace",

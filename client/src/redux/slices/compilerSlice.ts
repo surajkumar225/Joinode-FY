@@ -12,9 +12,25 @@ export interface CompilertSliceStateType {
 
 const initialState: CompilertSliceStateType = {
   fullCode: {
-    html: "THis is html",
-    css: "THis is css",
-    javascript: "THis is js",
+    html: `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- External CSS files -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- External JavaScript files -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Your content goes here -->
+    <h1>Hello, World!</h1>
+</body>
+</html>
+`,
+    css: "h1",
+    javascript: "console.log();",
   },
   currentLanguage: "html",
 };
@@ -33,9 +49,12 @@ const compilerSlice = createSlice({
         // state.fullCode[state.currentLanguage] = action.payload;
         state.fullCode[state.currentLanguage] = action.payload
     },
+    updateFullCode:(state, action:PayloadAction<CompilertSliceStateType["fullCode"]>) => {
+        state.fullCode = action.payload;
+    }
   },
 });
 
 export default compilerSlice.reducer;
-export const { updateCurrentLanguage, updateCodeValue } =
+export const { updateCurrentLanguage, updateCodeValue, updateFullCode } =
   compilerSlice.actions;
