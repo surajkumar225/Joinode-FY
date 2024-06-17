@@ -29,8 +29,18 @@ const initialState: CompilertSliceStateType = {
 </body>
 </html>
 `,
-    css: "h1",
-    javascript: "console.log();",
+    css: `body{
+  background-color:black;
+}
+
+h1{
+  color: green;
+  font-size: 200px;
+  margin: 20px
+  display: flex;
+  justify-content: center;
+}`,
+    javascript: `console.log("Testing");`,
   },
   currentLanguage: "html",
 };

@@ -20,7 +20,6 @@ import { useState } from "react";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -74,13 +73,8 @@ export default function HelperHeader() {
 
         <Dialog>
           <DialogTrigger className="whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 h-9 px-4 py-2 flex justify-center items-center gap-1">
-            {/* <Button
-              className="flex justify-center items-center gap-1"
-              variant="secondary"
-            > */}
               <Share2Icon size={15} />
               Share
-            {/* </Button> */}
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
@@ -113,13 +107,6 @@ export default function HelperHeader() {
           </DialogContent>
         </Dialog>
 
-        {/* <Button
-          className="flex justify-center items-center gap-1"
-          variant="secondary"
-        >
-          <Share2Icon size={15} />
-          Share
-        </Button> */}
       </div>
       <div className="__tab__switcher flex justify-center items-center gap-1">
         <small>Language: </small>
